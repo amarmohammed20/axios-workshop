@@ -5,10 +5,10 @@ import Select from 'react-select';
 
 function App() {
 
-  const [userData, setUserData] = useState( [] );
-  const [selectedUser, setSelectedUser] = useState([]);
+  const [userData, setUserData] = useState([]);
+  const [selectedUser, setSelectedUser] = useState();
 
-  const usersApiUrl = 'https://jsonplaceholder.typicode.com/users/'
+  const usersApiUrl = 'https://jsonplaceholder.typicode.com/users/';
 
   useEffect(() => {
     axios.get(usersApiUrl)
@@ -17,9 +17,12 @@ function App() {
     //Do a catch here
   },[])
 
-  // setSelectedUser(userData.map(name => {
-  //   console.log(name)
-  // }))
+  useEffect(() => {
+    const selecterNames = userData.map(name => name.name);
+    setSelectedUser(selecterNames);
+  }, [userData])
+
+  console.log(selectedUser);
 
   return (
     <div className="App">
