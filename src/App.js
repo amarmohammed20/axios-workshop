@@ -32,9 +32,9 @@ function App() {
   return (
     <div className="App">
       <h1>Axios Workshop</h1>
-      <h2>Select the user data you want from the api call</h2>
-      <label>Choose an ice cream flavor:
-        <select class="ice-cream" name="ice-cream" onChange={onChangeHandler}>
+      <h2>Using React we will render the api data filtered on what you select</h2>
+      <label>Choose the user you would like to view detials on:
+        <select class="user-selection" name="ice-cream" onChange={onChangeHandler}>
           <option value="">Select One …</option>
           {
             userData.map(user => {
