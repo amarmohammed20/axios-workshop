@@ -23,7 +23,7 @@ function App() {
     } else {
       setSelectedUser(userData)
     }
-  }, [selectedValue])
+  }, [selectedValue, userData])
 
   const onChangeHandler = (e) => {
     setSelectedValue(e.target.value);
